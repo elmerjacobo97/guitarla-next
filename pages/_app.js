@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }) {
         // Comprobar si la guitarra ya esta en el carrito...
         if(carrito.some( guitarraState =>  guitarraState.id === guitarra.id )) {
             // Iterar para actualizar la cantidad
-            const carritoActualizado = carrito.map( guitarraState => {
+            const carritoActualizado = carrito?.map( guitarraState => {
                 if( guitarraState.id === guitarra.id ) {
                     guitarraState.cantidad = guitarra.cantidad;
                 }
@@ -49,7 +49,7 @@ export default function App({ Component, pageProps }) {
     }
 
     const actualizarCantidad = guitarra => {
-        const carritoActualizado = carrito.map( guitarraState => {
+        const carritoActualizado = carrito?.map( guitarraState => {
             if(guitarraState.id === guitarra.id ) {
                 guitarraState.cantidad = parseInt( guitarra.cantidad )
             }
